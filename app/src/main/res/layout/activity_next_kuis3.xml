@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Kuis.NextKuis3Activity">
+
+    <RelativeLayout
+        android:id="@+id/bar_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:layout_height="100dp"
+            android:src="@drawable/elips2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:src="@drawable/logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <TextView
+                android:text="Powerswitch"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:fontFamily="casual"
+                android:textStyle="italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bar_top">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/bar_top">
+
+        <TextView
+            android:id="@+id/skor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textSize="10sp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deret Angka Dan Huruf"
+            android:gravity="center"
+            android:background="#FDDD56"
+            android:layout_marginTop="1dp"
+            android:id="@+id/text1"
+            android:layout_below="@+id/menu_bar"
+            android:textSize="20dp"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Petunjuk Soal :
+Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang diberikan. a, b, c, atau d sebagai pilihan jawaban anda. Kerjakan dengan cepat dan teliti. Soal Akan Tertutup Otomatis Ketika Waktu Yang Diberikan Sudah Habis."
+            android:layout_marginTop="10dp"
+            android:id="@+id/text2"
+            android:layout_below="@+id/text1"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="15dp"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Contoh : "
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:id="@+id/text3"
+            android:layout_below="@+id/text2"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:fontFamily="casual"
+            android:background="#FDDD56"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2 . . . 4 . . . 8 . . . 14 . . . 14 . . . 24 . . .  20 . . . "
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:id="@+id/text4"
+            android:layout_below="@+id/text3"
+            android:textSize="17dp"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="a. 34"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/text5"
+            android:textSize="15dp"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b. 44"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/text6"
+            android:textSize="15dp"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="c. 54"
+            android:gravity="center"
+            android:id="@+id/text7"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d. 64"
+            android:gravity="center"
+            android:id="@+id/text8"
+            android:layout_weight="1"
+            android:textSize="15dp"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jawaban yang benar adalah"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:id="@+id/text9"
+            android:textSize="15dp"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="a. 34"
+            android:gravity="center"
+            android:id="@+id/text10"
+            android:textSize="15dp"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Penjelasan"
+            android:background="#FDDD56"
+            android:gravity="center"
+            android:id="@+id/text11"
+            android:textSize="15dp"
+            android:fontFamily="casual"
+            android:textColor="#000"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/jawaban"/>
+
+        <Button
+            android:id="@+id/btn_mulai"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Mulai"
+            android:onClick="next"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:background="@drawable/circle_blue"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="50dp"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

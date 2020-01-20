@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.projectnew">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeLogin"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Extend.ExNextFinish"></activity>
+        <activity android:name=".Extend.ExNextKuis3Mulai" />
+        <activity android:name=".Extend.ExNextKuis2Mulai" />
+        <activity android:name=".Extend.ExNextKuis3" />
+        <activity android:name=".Extend.ExNextKuis2" />
+        <activity android:name=".Kuis.NextFinishActivity" />
+        <activity android:name=".Kuis.NextKuis3Activity" />
+        <activity android:name=".Kuis.NextKuis2Activity" />
+        <activity android:name=".Karir.NextKarirActivity" />
+        <activity android:name=".Karir.NextMulaiActivity" />
+        <activity android:name=".Kuis.ActivityKuis3" />
+        <activity android:name=".Kuis.ActivityKuis2" />
+        <activity android:name=".Kuis.ActivityKuis1" />
+        <activity android:name=".CarrerActivity" />
+        <activity android:name=".NotifActivity" />
+        <activity
+            android:name=".UserActivity"
+            android:theme="@style/AppThemeRegist" />
+        <activity
+            android:name=".Read_Profile"
+            android:theme="@style/AppThemeLogin" />
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/AppThemeLogin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/AppThemeRegist" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppThemeLogin" />
+    </application>
+
+</manifest>
