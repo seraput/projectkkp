@@ -47,7 +47,7 @@ public class NextFinishActivity extends AppCompatActivity {
     Integer nilai3;
     SessionManager sessionManager;
 
-    private static String URL_EDIT ="http://192.168.43.25/api/kkp_project/update_nilai3.php";
+    private static String URL_EDIT ="http://192.168.0.110/api/kkp_project/update_nilai3.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

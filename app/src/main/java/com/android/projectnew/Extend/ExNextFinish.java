@@ -42,8 +42,8 @@ public class ExNextFinish extends AppCompatActivity {
     String getId;
     SessionManager sessionManager;
 
-    private static String URL_READ ="http://192.168.43.25/api/kkp_project/read_detail.php";
-    private static String URL_CREATE = "http://192.168.43.25/api/kkp_project/create_status.php";
+    private static String URL_READ ="http://192.168.0.110/api/kkp_project/read_detail.php";
+    private static String URL_CREATE = "http://192.168.0.110/api/kkp_project/create_status.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

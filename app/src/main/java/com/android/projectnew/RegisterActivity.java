@@ -6,6 +6,9 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -37,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText name, email, password, c_password, alamat, telepon;
     private Button btn_regist;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://192.168.43.25/api/kkp_project/register.php";
+    private static String URL_REGIST = "http://192.168.0.110/api/kkp_project/register.php";
     private static final String TAG = "RegisterActivity";
 
     private TextView tanggal;
@@ -53,17 +56,42 @@ public class RegisterActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        c_password = findViewById(R.id.c_password);
         btn_regist = findViewById(R.id.btn_regist);
         tanggal = findViewById(R.id.tvDate);
         alamat = findViewById(R.id.alamat);
         telepon = findViewById(R.id.telepon);
 
+//        name.addTextChangedListener(RegistTW);
+//        email.addTextChangedListener(RegistTW);
+//        alamat.addTextChangedListener(RegistTW);
+//        telepon.addTextChangedListener(RegistTW);
+//        password.addTextChangedListener(RegistTW);
+//        c_password.addTextChangedListener(RegistTW);
+
 
         btn_regist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Regist();
+                String mName = name.getText().toString().trim();
+                String mEmail = email.getText().toString().trim();
+                String mAlamat = alamat.getText().toString().trim();
+                String mTelepon = telepon.getText().toString().trim();
+                String mPass = password.getText().toString().trim();
+
+                if (!mName.isEmpty() && !mEmail.isEmpty() && !mAlamat.isEmpty() && !mTelepon.isEmpty() && !mPass.isEmpty()){
+                    Regist();
+                }
+//                else if (password != c_password){
+//                    Toast.makeText(RegisterActivity.this, "Password Tidak Sesuai", Toast.LENGTH_SHORT).show();
+//                }
+                else{
+                    Toast.makeText(RegisterActivity.this, "Pastikan Semua Terisi", Toast.LENGTH_SHORT).show();
+                    name.setError("Nama Lengkap");
+                    email.setError("Email");
+                    alamat.setError("Alamat");
+                    telepon.setError("Nomer Telepon");
+                    password.setError("Password");
+                }
             }
         });
 
@@ -101,16 +129,41 @@ public class RegisterActivity extends AppCompatActivity {
         };
     }
 
+//    private TextWatcher RegistTW = new TextWatcher() {
+//        @Override
+//        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence s, int start, int before, int count) {
+//            String nameinput = name.getText().toString().trim();
+//            String emailinput = email.getText().toString().trim();
+//            String alamatinput = alamat.getText().toString().trim();
+//            String teleponinput = telepon.getText().toString().trim();
+//            String passinput = password.getText().toString().trim();
+//            String cpassinput = c_password.getText().toString().trim();
+//
+//            btn_regist.setEnabled(!nameinput.isEmpty() && !emailinput.isEmpty() && !alamatinput.isEmpty()
+//                    && !teleponinput.isEmpty() && !passinput.isEmpty() && !cpassinput.isEmpty());
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable s) {
+//
+//        }
+//    };
+
     private void Regist(){
         loading.setVisibility(View.VISIBLE);
         btn_regist.setVisibility(View.GONE);
 
-        final String name = this.name.getText().toString().trim();
-        final String email = this.email.getText().toString().trim();
-        final String tanggal = this.tanggal.getText().toString().trim();
-        final String alamat = this.alamat.getText().toString().trim();
-        final String telepon = this.telepon.getText().toString().trim();
-        final String password = this.password.getText().toString().trim();
+        final String Name = this.name.getText().toString().trim();
+        final String Email = this.email.getText().toString().trim();
+        final String Tanggal = this.tanggal.getText().toString().trim();
+        final String Alamat = this.alamat.getText().toString().trim();
+        final String Telepon = this.telepon.getText().toString().trim();
+        final String Pass = this.password.getText().toString().trim();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST,
                 new Response.Listener<String>() {
@@ -146,12 +199,12 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("name", name);
-                params.put("email", email);
-                params.put("tanggal", tanggal);
-                params.put("alamat", alamat);
-                params.put("telepon", telepon);
-                params.put("password", password);
+                params.put("name", Name);
+                params.put("email", Email);
+                params.put("tanggal", Tanggal);
+                params.put("alamat", Alamat);
+                params.put("telepon", Telepon);
+                params.put("password", Pass);
                 return params;
             }
         };

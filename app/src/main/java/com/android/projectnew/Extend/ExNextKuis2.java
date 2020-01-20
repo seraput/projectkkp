@@ -40,7 +40,7 @@ public class ExNextKuis2 extends AppCompatActivity {
     SessionManager sessionManager;
     String getId;
     Integer nilai1, nilai2, nilai3;
-    private static String URL_READ ="http://192.168.43.25/api/kkp_project/read_detail.php";
+    private static String URL_READ ="http://192.168.0.110/api/kkp_project/read_detail.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

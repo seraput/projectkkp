@@ -33,7 +33,7 @@ public class NextKuis3Activity extends AppCompatActivity {
     String getId;
     SessionManager sessionManager;
 
-    private static String URL_EDIT ="http://192.168.43.25/api/kkp_project/update_nilai2.php";
+    private static String URL_EDIT ="http://192.168.0.110/api/kkp_project/update_nilai2.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

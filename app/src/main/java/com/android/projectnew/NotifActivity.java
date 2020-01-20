@@ -30,7 +30,7 @@ public class NotifActivity extends AppCompatActivity {
     private TextView id, nama, email, tgl, status, nilai1, nilai2, nilai3;
     SessionManager sessionManager;
     String getId;
-    private static String URL_READ ="http://192.168.43.25/api/kkp_project/read_data.php";
+    private static String URL_READ ="http://192.168.0.110/api/kkp_project/read_data.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
 //            }
 //        };
 //        Volley.newRequestQueue(this).add(request);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.43.25/api/kkp_project/login.php",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.0.110/api/kkp_project/login.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
