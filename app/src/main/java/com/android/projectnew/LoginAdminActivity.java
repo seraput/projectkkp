@@ -25,18 +25,18 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginAdminActivity extends AppCompatActivity {
 
     private EditText email, password;
     private Button btn_login;
-    private TextView link_regist;
+    private TextView link_regist, forgot;
     private ProgressBar loading;
     SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_admin);
 
         sessionManager = new SessionManager(this);
 
@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         btn_login = findViewById(R.id.btn_login);
         link_regist = findViewById(R.id.link_regist);
+        forgot = findViewById(R.id.forgot_pass);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,10 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-
-    private void Login(final String email, final String password) {
+    }private void Login(final String email, final String password) {
         loading.setVisibility(View.VISIBLE);
         btn_login.setVisibility(View.GONE);
 
@@ -116,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     sessionManager.createSession(name, email, id);
 
-                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    Intent intent = new Intent(LoginAdminActivity.this, HomeActivity.class);
                                     intent.putExtra("name", name);
                                     intent.putExtra("email", email);
                                     startActivity(intent);
@@ -129,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                             e.printStackTrace();
                             loading.setVisibility(View.GONE);
                             btn_login.setVisibility(View.VISIBLE);
-                            Toast.makeText(LoginActivity.this, "error" + e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginAdminActivity.this, "error" + e.toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
@@ -138,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         loading.setVisibility(View.GONE);
                         btn_login.setVisibility(View.VISIBLE);
-                        Toast.makeText(LoginActivity.this, "error" +error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginAdminActivity.this, "error" +error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {
@@ -155,12 +153,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void link_regist(View view) {
-        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+        Intent intent = new Intent(LoginAdminActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
 
-    public void admin(View view) {
-        Intent intent = new Intent(LoginActivity.this, LoginAdminActivity.class);
+
+    public void forgot(View view) {
+    }
+
+    public void user(View view) {
+        Intent intent = new Intent(LoginAdminActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Recruitment_PSW</string>
+    <string name="user"><b><u>User</u></b></string>
+    <string name="admin"><b><u>Admin</u></b></string>
+    <string name="regist"><b><u>Register Now!</u></b></string>
+    <string name="forgot"><b><u>Forgot Password?</u></b></string>
 </resources>

@@ -78,12 +78,15 @@ public class RegisterActivity extends AppCompatActivity {
                 String mTelepon = telepon.getText().toString().trim();
                 String mPass = password.getText().toString().trim();
 
+//                if (isValidasiEmail(email.getText().toString())){
+//                    System.out.println("Format Benar");
+//                }else{
+//                    email.setError("Format Email Salah!!");
+//                }
+
                 if (!mName.isEmpty() && !mEmail.isEmpty() && !mAlamat.isEmpty() && !mTelepon.isEmpty() && !mPass.isEmpty()){
                     Regist();
                 }
-//                else if (password != c_password){
-//                    Toast.makeText(RegisterActivity.this, "Password Tidak Sesuai", Toast.LENGTH_SHORT).show();
-//                }
                 else{
                     Toast.makeText(RegisterActivity.this, "Pastikan Semua Terisi", Toast.LENGTH_SHORT).show();
                     name.setError("Nama Lengkap");
@@ -128,6 +131,21 @@ public class RegisterActivity extends AppCompatActivity {
             }
         };
     }
+//
+//    public static boolean isValidasiEmail(String email){
+//        boolean validasi;
+//        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]";
+//        String emailPattern2 = "[a-zA-Z-0-9._-]+@[a-z]+\\.+[a-z]+\\.+[a-z]+";
+//
+//        if (email.matches(emailPattern)){
+//            validasi = true;
+//        }else if(email.matches(emailPattern2)){
+//            validasi = true;
+//        }else{
+//            validasi = false;
+//        }
+//        return validasi;
+//    }
 
 //    private TextWatcher RegistTW = new TextWatcher() {
 //        @Override

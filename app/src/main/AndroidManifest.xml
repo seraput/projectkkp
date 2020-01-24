@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeLogin"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Extend.ExNextFinish"></activity>
+        <activity android:name=".LoginAdminActivity"></activity>
+        <activity android:name=".Extend.ExNextFinish" />
         <activity android:name=".Extend.ExNextKuis3Mulai" />
         <activity android:name=".Extend.ExNextKuis2Mulai" />
         <activity android:name=".Extend.ExNextKuis3" />
