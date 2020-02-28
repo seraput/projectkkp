@@ -1,4 +1,4 @@
-package com.android.projectnew.ArraySoal;
+package com.android.projectnew.ArrayData;
 
 public class Pertanyaan1 {
     private String textQuestion[] = {

@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.android.projectnew.ArraySoal.Pertanyaan1;
+import com.android.projectnew.ArrayData.Pertanyaan1;
 import com.android.projectnew.R;
 
 import java.util.Locale;
@@ -28,7 +28,7 @@ private Pertanyaan1 pertanyaan1 = new Pertanyaan1();
     private int mScore =0;
     private int mQuestionNumber=0;
     private int mJmlSoal =1;
-    private static final long COUNTDOWN_IN_MILLIS = 30000;
+    private static final long COUNTDOWN_IN_MILLIS = 300000;
 
     private ColorStateList textColorDefaultCd;
     private CountDownTimer countDownTimer;
@@ -105,19 +105,19 @@ private Pertanyaan1 pertanyaan1 = new Pertanyaan1();
         }.start();
     }
 
-    private void updateCountDownText(){
-        int minutes = (int) (timeLeftInMillis / 1000) / 60;
-        int seconds = (int) (timeLeftInMillis / 1000) % 60;
-
-        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
-        textViewCountDown.setText(timeFormatted);
-
-        if (timeLeftInMillis < 10000){
-            textViewCountDown.setTextColor(Color.RED);
-        }else{
-            textViewCountDown.setTextColor(textColorDefaultCd);
-        }
-    }
+//    private void updateCountDownText(){
+//        int minutes = (int) (timeLeftInMillis / 1000) / 60;
+//        int seconds = (int) (timeLeftInMillis / 1000) % 60;
+//
+//        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+//        textViewCountDown.setText(timeFormatted);
+//
+//        if (timeLeftInMillis < 10000){
+//            textViewCountDown.setTextColor(Color.RED);
+//        }else{
+//            textViewCountDown.setTextColor(textColorDefaultCd);
+//        }
+//    }
     private void updateSoal(int soal) {jmlsoal.setText(""+mJmlSoal+""); }
 
     public void jawab(View view){

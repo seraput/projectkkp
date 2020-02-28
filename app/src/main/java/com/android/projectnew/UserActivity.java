@@ -41,6 +41,11 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static com.android.projectnew.Api.ApiLocal.URL_EDIT;
+import static com.android.projectnew.Api.ApiLocal.URL_READ;
+import static com.android.projectnew.Api.ApiLocal.URL_UPLOAD;
+
+
 public class UserActivity extends AppCompatActivity {
 
     private static final String TAG = UserActivity.class.getSimpleName() ;
@@ -48,9 +53,6 @@ public class UserActivity extends AppCompatActivity {
     private Button btn_photo_upload;
     SessionManager sessionManager;
     String getId;
-    private static String URL_READ ="http://192.168.0.110/api/kkp_project/read_detail.php";
-    private static String URL_EDIT ="http://192.168.0.110/api/kkp_project/edit_detail.php";
-    private static String URL_UPLOAD ="http://192.168.0.110/api/kkp_project/upload.php";
     private Menu action;
     private Bitmap bitmap;
     CircleImageView profile_image;

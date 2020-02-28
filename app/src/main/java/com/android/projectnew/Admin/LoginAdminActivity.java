@@ -1,4 +1,4 @@
-package com.android.projectnew;
+package com.android.projectnew.Admin;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.projectnew.HomeActivity;
+import com.android.projectnew.LoginActivity;
+import com.android.projectnew.R;
+import com.android.projectnew.SessionManager;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,6 +28,9 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.android.projectnew.Api.ApiLocal.URL_LOGIN_ADMIN;
+
 
 public class LoginAdminActivity extends AppCompatActivity {
 
@@ -44,7 +51,6 @@ public class LoginAdminActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btn_login = findViewById(R.id.btn_login);
-        link_regist = findViewById(R.id.link_regist);
         forgot = findViewById(R.id.forgot_pass);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +99,7 @@ public class LoginAdminActivity extends AppCompatActivity {
 //            }
 //        };
 //        Volley.newRequestQueue(this).add(request);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.0.110/api/kkp_project/login.php",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN_ADMIN,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -152,17 +158,17 @@ public class LoginAdminActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    public void link_regist(View view) {
-        Intent intent = new Intent(LoginAdminActivity.this, RegisterActivity.class);
-        startActivity(intent);
-    }
-
 
     public void forgot(View view) {
     }
 
     public void user(View view) {
         Intent intent = new Intent(LoginAdminActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void regist_admin(View view) {
+        Intent intent = new Intent(LoginAdminActivity.this, Register_Admin_Activity.class);
         startActivity(intent);
     }
 }

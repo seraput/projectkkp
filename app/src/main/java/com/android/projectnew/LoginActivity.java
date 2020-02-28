@@ -1,6 +1,7 @@
 package com.android.projectnew;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.projectnew.Admin.LoginAdminActivity;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,12 +27,16 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.android.projectnew.Api.ApiLocal.URL_LOGIN_USER;
+
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText email, password;
     private Button btn_login;
     private TextView link_regist;
     private ProgressBar loading;
+    public boolean doubleTapParam = false;
     SessionManager sessionManager;
 
     @Override
@@ -51,12 +57,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String mEmail = email.getText().toString().trim();
                 String mPass = password.getText().toString().trim();
-
-                if (!mEmail.isEmpty() || !mPass.isEmpty()){
-                    Login(mEmail, mPass);
+                
+                if (email.getText().toString().length()==0){
+                    email.setError("Null Email");
+                }else if (password.getText().toString().length()==0){
+                    password.setError("Null Password");
                 }else{
-                    email.setError("Please insert Email");
-                    password.setError("Please insert Password");
+                    Login(mEmail,mPass);
                 }
             }
         });
@@ -66,36 +73,7 @@ public class LoginActivity extends AppCompatActivity {
     private void Login(final String email, final String password) {
         loading.setVisibility(View.VISIBLE);
         btn_login.setVisibility(View.GONE);
-
-//        StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.0.132/api/kkp_project/login.php",
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//
-//                        if (response.contains("1")){
-//                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-//                        }else{
-//                            Toast.makeText(LoginActivity.this, "Please Check !", Toast.LENGTH_SHORT).show();
-//                        }
-//
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//
-//            }
-//        }){
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//
-//                Map<String, String> params = new HashMap<>();
-//                params.put("email", email);
-//                params.put("password", password);
-//                return params;
-//            }
-//        };
-//        Volley.newRequestQueue(this).add(request);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.0.110/api/kkp_project/login.php",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN_USER,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -129,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                             e.printStackTrace();
                             loading.setVisibility(View.GONE);
                             btn_login.setVisibility(View.VISIBLE);
-                            Toast.makeText(LoginActivity.this, "error" + e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Error, Email Or Password", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
@@ -138,7 +116,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         loading.setVisibility(View.GONE);
                         btn_login.setVisibility(View.VISIBLE);
-                        Toast.makeText(LoginActivity.this, "error" +error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Error, Check Connection" +error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {
@@ -162,5 +140,22 @@ public class LoginActivity extends AppCompatActivity {
     public void admin(View view) {
         Intent intent = new Intent(LoginActivity.this, LoginAdminActivity.class);
         startActivity(intent);
+    }
+    public void onBackPressed(){
+        if (doubleTapParam) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleTapParam = true;
+        Toast.makeText(this, "Tap sekali lagi untuk keluar", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleTapParam = false;
+            }
+        }, 2000);
     }
 }

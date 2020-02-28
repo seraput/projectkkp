@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffffff"
     tools:context=".RegisterActivity">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,11 +14,12 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
+            android:orientation="vertical"
             android:layout_marginRight="20dp"
             tools:ignore="ScrollViewSize">
 
@@ -34,6 +32,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#039BE5"
                     android:text="Full Name"/>
 
                 <android.support.design.widget.TextInputLayout
@@ -43,7 +42,7 @@
                     <EditText
                         android:id="@+id/name"
                         android:inputType="textPersonName"
-                        android:textColor="#515455"
+                        android:textColor="#CD111111"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:ignore="Autofill,HardcodedText" />
@@ -54,7 +53,6 @@
 
             <LinearLayout
                 android:id="@+id/ET2"
-                android:layout_below="@id/ET1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -62,6 +60,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#039BE5"
                     android:text="Email"/>
 
                 <android.support.design.widget.TextInputLayout
@@ -71,7 +70,7 @@
                     <EditText
                         android:id="@+id/email"
                         android:inputType="textEmailAddress"
-                        android:textColor="#515455"
+                        android:textColor="#CD111111"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:ignore="Autofill,HardcodedText" />
@@ -81,48 +80,72 @@
 
             <LinearLayout
                 android:id="@+id/ET3"
-                android:layout_below="@id/ET2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_marginTop="10dp"
                 tools:ignore="UseCompoundDrawables">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tanggal Lahir"
-                    android:layout_marginBottom="10dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@mipmap/calendar"
-                        android:layout_gravity="center"
-                        tools:ignore="ContentDescription" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Lahir"
+                        android:textColor="#039BE5"
+                        android:layout_marginBottom="10dp"/>
+
 
                     <TextView
                         android:id="@+id/tvDate"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:text="-- Select! --"
+                        android:text="Tanggal"
+                        android:textColor="#CD111111"
                         android:textSize="15dp"
-                        android:layout_marginLeft="20dp"
                         android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis Kelamin"
+                        android:textColor="#039BE5"/>
+
+                    <RadioGroup
+                        android:id="@+id/rg_kelamin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rb_pria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Laki-Laki"/>
+                        <RadioButton
+                            android:id="@+id/rb_wanita"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Perempuan"/>
+                    </RadioGroup>
 
                 </LinearLayout>
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:id="@+id/ET5"
-                android:layout_below="@+id/ET3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -131,7 +154,30 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#039BE5"
                     android:text="Alamat Domisili"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spProv"
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Spinner
+                        android:id="@+id/spKota"
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -140,8 +186,8 @@
                     <EditText
                         android:id="@+id/alamat"
                         android:inputType="textMultiLine"
-                        android:lines="2"
-                        android:textColor="#515455"
+                        android:hint="Address"
+                        android:textColor="#CD111111"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:ignore="Autofill,HardcodedText" />
@@ -151,7 +197,6 @@
 
             <LinearLayout
                 android:id="@+id/ET6"
-                android:layout_below="@id/ET5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -159,7 +204,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Telephon"/>
+                    android:textColor="#039BE5"
+                    android:text="Phone Number"/>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -167,7 +213,7 @@
 
                     <EditText
                         android:id="@+id/telepon"
-                        android:textColor="#515455"
+                        android:textColor="#CD111111"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:ignore="Autofill,HardcodedText,TextFields" />
@@ -177,7 +223,6 @@
 
             <LinearLayout
                 android:id="@+id/ET7"
-                android:layout_below="@+id/ET6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -185,6 +230,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#039BE5"
                     android:text="Password"/>
 
 
@@ -196,7 +242,7 @@
                     <EditText
                         android:id="@+id/password"
                         android:inputType="textPassword"
-                        android:textColor="#515455"
+                        android:textColor="#CD111111"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:ignore="Autofill,HardcodedText" />
@@ -209,7 +255,6 @@
                     android:layout_marginTop="20dp"
                     android:visibility="gone"
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/ET7"
                     android:layout_height="wrap_content"/>
 
                 <Button
@@ -226,8 +271,8 @@
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </ScrollView>
 
-</RelativeLayout>
+</LinearLayout>

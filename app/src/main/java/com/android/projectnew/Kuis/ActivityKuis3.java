@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.android.projectnew.ArraySoal.Pertanyaan3;
+import com.android.projectnew.ArrayData.Pertanyaan3;
 import com.android.projectnew.R;
 
 public class ActivityKuis3 extends AppCompatActivity {

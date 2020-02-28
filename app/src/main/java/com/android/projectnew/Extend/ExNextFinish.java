@@ -6,16 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.projectnew.HomeActivity;
 import com.android.projectnew.Kuis.NextFinishActivity;
-import com.android.projectnew.LoginActivity;
 import com.android.projectnew.R;
-import com.android.projectnew.RegisterActivity;
 import com.android.projectnew.SessionManager;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -33,6 +29,9 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.android.projectnew.Api.ApiLocal.URL_CREATE_STATUS;
+import static com.android.projectnew.Api.ApiLocal.URL_READ_DETAIL;
+
 public class ExNextFinish extends AppCompatActivity {
 
     private static final String TAG = NextFinishActivity.class.getSimpleName();
@@ -42,8 +41,6 @@ public class ExNextFinish extends AppCompatActivity {
     String getId;
     SessionManager sessionManager;
 
-    private static String URL_READ ="http://192.168.0.110/api/kkp_project/read_detail.php";
-    private static String URL_CREATE = "http://192.168.0.110/api/kkp_project/create_status.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +87,7 @@ public class ExNextFinish extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        final StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_READ,
+        final StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_READ_DETAIL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -166,7 +163,7 @@ public class ExNextFinish extends AppCompatActivity {
         final String tgl = this.tgl.getText().toString().trim();
         final String status = this.status.getText().toString().trim();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_CREATE,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_CREATE_STATUS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

@@ -29,6 +29,8 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static com.android.projectnew.Api.ApiLocal.URL_READ;
+
 
 public class Read_Profile extends AppCompatActivity {
 
@@ -37,7 +39,7 @@ public class Read_Profile extends AppCompatActivity {
     SessionManager sessionManager;
     private Button logout;
     String getId;
-    private static String URL_READ ="http://192.168.0.110/api/kkp_project/read_detail.php";
+//    private static String URL_READ ="http://192.168.1.107/api/kkp_project/read_detail.php";
     private Bitmap bitmap;
     CircleImageView profile_image;
 

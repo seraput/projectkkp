@@ -26,6 +26,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.android.projectnew.Api.ApiLocal.URL_EDIT_NILAI_2;
+
+
 public class NextKuis3Activity extends AppCompatActivity {
 
     TextView skorak;
@@ -33,7 +36,6 @@ public class NextKuis3Activity extends AppCompatActivity {
     String getId;
     SessionManager sessionManager;
 
-    private static String URL_EDIT ="http://192.168.0.110/api/kkp_project/update_nilai2.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +64,7 @@ public class NextKuis3Activity extends AppCompatActivity {
         progressDialog.setMessage("Saving...");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_EDIT,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_EDIT_NILAI_2,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

@@ -32,6 +32,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.android.projectnew.Api.ApiLocal.URL_READ_DETAIL;
+
+
 public class ExNextKuis3 extends AppCompatActivity {
 
     private static final String TAG = UserActivity.class.getSimpleName();
@@ -39,7 +42,6 @@ public class ExNextKuis3 extends AppCompatActivity {
     SessionManager sessionManager;
     String getId;
     Integer nilai1, nilai2, nilai3;
-    private static String URL_READ ="http://192.168.0.110/api/kkp_project/read_detail.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +66,7 @@ public class ExNextKuis3 extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_READ,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_READ_DETAIL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

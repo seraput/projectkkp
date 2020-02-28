@@ -12,14 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.projectnew.Extend.ExNextFinish;
-import com.android.projectnew.Extend.ExNextKuis3;
-import com.android.projectnew.HomeActivity;
-import com.android.projectnew.LoginActivity;
 import com.android.projectnew.R;
-import com.android.projectnew.Read_Profile;
-import com.android.projectnew.RegisterActivity;
 import com.android.projectnew.SessionManager;
-import com.android.projectnew.UserActivity;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,13 +21,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.android.projectnew.Api.ApiLocal.URL_EDIT_NILAI_3;
 
 public class NextFinishActivity extends AppCompatActivity {
 
@@ -47,7 +40,6 @@ public class NextFinishActivity extends AppCompatActivity {
     Integer nilai3;
     SessionManager sessionManager;
 
-    private static String URL_EDIT ="http://192.168.0.110/api/kkp_project/update_nilai3.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +81,7 @@ public class NextFinishActivity extends AppCompatActivity {
         progressDialog.setMessage("Saving...");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_EDIT,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_EDIT_NILAI_3,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

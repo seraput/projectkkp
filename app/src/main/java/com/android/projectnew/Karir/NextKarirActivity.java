@@ -37,6 +37,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.android.projectnew.Api.ApiLocal.URL_READ_NILAI;
+
+
 public class NextKarirActivity extends AppCompatActivity {
 
     private static final String TAG = UserActivity.class.getSimpleName();
@@ -44,7 +47,6 @@ public class NextKarirActivity extends AppCompatActivity {
     SessionManager sessionManager;
     String getId;
     Integer nilai1, nilai2, nilai3;
-    private static String URL_READ ="http://192.168.0.110/api/kkp_project/read_detail.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +71,7 @@ public class NextKarirActivity extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_READ,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_READ_NILAI,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -154,8 +156,8 @@ public class NextKarirActivity extends AppCompatActivity {
             startActivity(ip);
         }else if (nilai1 > 0){
             Toast.makeText(this, "Nilai Psikotes Ke-1 Sudah Terisi.", Toast.LENGTH_SHORT).show();
-            Intent ip = new Intent(NextKarirActivity.this, ExNextKuis2.class);
-            startActivity(ip);
+            Intent i = new Intent(NextKarirActivity.this, ExNextKuis2.class);
+            startActivity(i);
         }
     }
 }
