@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Kuis.NextFinishActivity">
+    tools:context=".Activity.Kuis.NextFinishActivity">
 
     <RelativeLayout
         android:id="@+id/bar_top"
@@ -58,6 +58,7 @@
             android:text="0"
             android:layout_gravity="center"
             android:textSize="10sp"
+            android:visibility="gone"
             tools:ignore="HardcodedText,RtlHardcoded" />
 
         <TextView
@@ -84,7 +85,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:gravity="center_horizontal"
             android:text="Proses Psikotes Sudah Selesai Tekan Tombol Lanjutkan Dibawah"
             android:layout_marginTop="20dp"
             android:id="@+id/text2"

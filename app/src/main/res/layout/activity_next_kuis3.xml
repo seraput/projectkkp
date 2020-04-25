@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Kuis.NextKuis3Activity">
+    tools:context=".Activity.Kuis.NextKuis3Activity">
 
     <RelativeLayout
         android:id="@+id/bar_top"
@@ -64,6 +64,7 @@
             android:text="0"
             android:layout_gravity="center"
             android:textSize="10sp"
+            android:visibility="gone"
             tools:ignore="HardcodedText,RtlHardcoded" />
 
         <TextView
@@ -72,7 +73,7 @@
             android:text="Deret Angka Dan Huruf"
             android:gravity="center"
             android:background="#FDDD56"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/text1"
             android:layout_below="@+id/menu_bar"
             android:textSize="20dp"
@@ -82,7 +83,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
             android:text="Petunjuk Soal :
 Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang diberikan. a, b, c, atau d sebagai pilihan jawaban anda. Kerjakan dengan cepat dan teliti. Soal Akan Tertutup Otomatis Ketika Waktu Yang Diberikan Sudah Habis."
             android:layout_marginTop="10dp"

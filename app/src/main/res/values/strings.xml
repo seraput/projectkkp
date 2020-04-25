@@ -4,4 +4,5 @@
     <string name="admin"><b><u>Admin</u></b></string>
     <string name="regist"><b><u>Register Now!</u></b></string>
     <string name="forgot"><b><u>Forgot Password?</u></b></string>
+    <string name="prefLoginState">loginstate</string>
 </resources>

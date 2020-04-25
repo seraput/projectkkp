@@ -1,12 +1,18 @@
 <resources>
 
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
     <!--    Base Aplication theme-->
     <style name="AppThemeLogin" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary2</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
+        <item name="colorPrimaryDark">@color/colorPrimary2</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
     </style>
 
     <style name="AppThemeLogin.AppBarOverlay" parent="Theme.AppCompat.Light.DarkActionBar" />
@@ -15,13 +21,30 @@
     <!--    Base Aplication Theme-->
     <style name="AppThemeRegist" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary2</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
+        <item name="colorPrimaryDark">@color/colorPrimary2</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppThemeRegist.AppBarOverlay" parent="Theme.AppCompat.Light.DarkActionBar" />
     <style name="AppThemeRegist.PopUpOverlay" parent="Theme.AppCompat.Light" />
 
+    <style name="MenuStyle"
+        parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
     <style name="Widget.AppCompat.ActionBar.CloseMode"></style>
+
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <style name="AppTheme.SlidrActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
 
 </resources>

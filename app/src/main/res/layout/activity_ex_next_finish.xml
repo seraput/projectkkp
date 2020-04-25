@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Extend.ExNextFinish">
+    tools:context=".Activity.Extend.ExNextFinish">
 
     <RelativeLayout
         android:id="@+id/bar_top"
@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:gravity="center_horizontal"
             android:text="Untuk Selanjutnya Anda Bisa Mengecek Proses Lamaran Anda Pada Menu Notifikasi !"
             android:layout_marginTop="10dp"
             android:id="@+id/text2"
@@ -89,7 +89,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:gravity="center_horizontal"
             android:text="Tekan Tombol Selesai Untuk Kembali Ke Halaman Utama"
             android:layout_marginTop="20dp"
             android:id="@+id/text3"
@@ -103,7 +103,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
         <TextView
             android:id="@+id/iduser"

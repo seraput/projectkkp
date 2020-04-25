@@ -9,9 +9,10 @@
         android:topRightRadius="30dp"/>
     <size
         android:height="150dp"
-        android:width="150dp"/>
+        android:width="150dp" />
 
-    <solid
-        android:color="#03a9f4" />
+    <stroke
+        android:color="#03a9f4"
+        android:width="2dp"/>
 
 </shape>

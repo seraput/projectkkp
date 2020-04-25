@@ -6,18 +6,16 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffffff"
-    tools:context=".RegisterActivity">
+    tools:context=".Activity.User.RegisterActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
             android:orientation="vertical"
             android:layout_marginRight="20dp"
@@ -27,6 +25,7 @@
                 android:id="@+id/ET1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -82,7 +81,7 @@
                 android:id="@+id/ET3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_marginTop="10dp"
                 tools:ignore="UseCompoundDrawables">
 
@@ -104,18 +103,15 @@
                         android:id="@+id/tvDate"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:text="Tanggal"
-                        android:textColor="#CD111111"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
+                        android:text="Pilih"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -157,18 +153,53 @@
                     android:textColor="#039BE5"
                     android:text="Alamat Domisili"/>
 
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/alamat"
+                        android:inputType="textMultiLine"
+                        android:hint="Nama Jalan, No, RT, RW"
+                        android:textColor="#CD111111"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="Autofill,HardcodedText" />
+                </android.support.design.widget.TextInputLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Provinsi"
+                        android:textSize="16sp"
+                        android:layout_weight="2.5"/>
 
                     <Spinner
                         android:id="@+id/spProv"
                         android:layout_weight="1"
-                        android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kota/Kab"
+                        android:textSize="16sp"
+                        android:layout_weight="2.5"/>
 
                     <Spinner
                         android:id="@+id/spKota"
@@ -179,19 +210,6 @@
 
                 </LinearLayout>
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/alamat"
-                        android:inputType="textMultiLine"
-                        android:hint="Address"
-                        android:textColor="#CD111111"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:ignore="Autofill,HardcodedText" />
-                </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
 
@@ -199,13 +217,14 @@
                 android:id="@+id/ET6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#039BE5"
-                    android:text="Phone Number"/>
+                    android:text="Nomor Telephon"/>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -225,6 +244,7 @@
                 android:id="@+id/ET7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -236,8 +256,7 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:passwordToggleEnabled="true">
+                    android:layout_height="wrap_content">
 
                     <EditText
                         android:id="@+id/password"
@@ -246,6 +265,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:ignore="Autofill,HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/level"
+                        android:text="user"
+                        android:visibility="gone"
+                        />
+
                 </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
@@ -257,6 +285,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
+
                 <Button
                     android:id="@+id/btn_regist"
                     android:layout_width="match_parent"
@@ -264,7 +293,7 @@
                     android:text="Register"
                     android:background="#03a9f4"
                     android:layout_marginTop="20dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="50dp"
                     android:layout_below="@+id/loading"
                     android:textColor="#fff"
                     android:fontFamily="casual"

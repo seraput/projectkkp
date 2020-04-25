@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingBottom="10dp"
-    tools:context=".Kuis.ActivityKuis1">
+    tools:context=".Activity.Kuis.ActivityKuis1">
 
     <RelativeLayout
         android:id="@+id/bar_top"
@@ -39,7 +39,7 @@
                 android:fontFamily="casual"
                 android:textStyle="italic"
                 android:id="@+id/text_view_countdown"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
@@ -57,9 +57,8 @@
             android:id="@+id/soalbindo"
             android:layout_height="150dp"
             android:textSize="16sp"
-            android:textAlignment="center"
             android:fontFamily="monospace"
-            android:gravity="center_vertical"
+            android:gravity="center_horizontal"
             android:textColor="#000"
             tools:ignore="ContentDescription"/>
 

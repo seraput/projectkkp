@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Extend.ExNextKuis2Mulai">
+    tools:context=".Activity.Extend.ExNextKuis2Mulai">
 
     <RelativeLayout
         android:id="@+id/bar_top"
@@ -68,7 +68,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:gravity="center_horizontal"
             android:text="Petunjuk Soal :
 Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang diberikan. a, b, c, atau d sebagai pilihan jawaban anda. Kerjakan dengan cepat dan teliti. Soal Akan Tertutup Otomatis Ketika Waktu Yang Diberikan Sudah Habis."
             android:layout_marginTop="20dp"
@@ -76,7 +76,9 @@ Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang d
             android:layout_below="@+id/text1"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
-            android:textSize="12dp"
+            android:textSize="14dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:fontFamily="casual"
             android:textColor="#000"/>
 
@@ -85,7 +87,7 @@ Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang d
             android:layout_height="wrap_content"
             android:text=" Contoh : "
             android:gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/text3"
             android:layout_below="@+id/text2"
             android:textSize="16dp"
@@ -99,10 +101,10 @@ Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang d
             android:layout_height="wrap_content"
             android:text="Semua Y adalah P. Sebagian Y adalah R. Jadi :"
             android:gravity="center"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/text4"
             android:layout_below="@+id/text3"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:fontFamily="casual"
             android:textColor="#000"/>
 
@@ -113,7 +115,7 @@ Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang d
             android:gravity="center"
             android:layout_marginTop="5dp"
             android:id="@+id/text5"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:fontFamily="casual"
             android:textColor="#000"/>
 
@@ -123,7 +125,7 @@ Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang d
             android:text="b. Semua Y yang bukan R adalah P"
             android:gravity="center"
             android:id="@+id/text6"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:fontFamily="casual"
             android:textColor="#000"/>
 
@@ -133,7 +135,7 @@ Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang d
             android:text="c. Semua R yang bukan Y adalah P"
             android:gravity="center"
             android:id="@+id/text7"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:fontFamily="casual"
             android:textColor="#000"/>
 
@@ -143,7 +145,7 @@ Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang d
             android:text="d. Sebagian Y yang bukan R adalah P"
             android:gravity="center"
             android:id="@+id/text8"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:fontFamily="casual"
             android:textColor="#000"/>
 
@@ -154,7 +156,7 @@ Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang d
             android:gravity="center"
             android:layout_marginTop="5dp"
             android:id="@+id/text9"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:fontFamily="casual"
             android:textColor="#000"/>
 
@@ -164,7 +166,7 @@ Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang d
             android:text="b. Semua Y yang bukan R adalah P"
             android:gravity="center"
             android:id="@+id/text10"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:fontFamily="casual"
             android:textColor="#000"/>
 

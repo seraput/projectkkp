@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Kuis.NextKuis2Activity">
+    tools:context=".Activity.Kuis.NextKuis2Activity">
 
     <RelativeLayout
         android:id="@+id/bar_top"
@@ -63,6 +63,7 @@
             android:fontFamily="casual"
             android:text="0"
             android:layout_gravity="center"
+            android:visibility="gone"
             android:textSize="10sp"
             tools:ignore="HardcodedText,RtlHardcoded" />
 
@@ -73,6 +74,7 @@
             android:layout_below="@+id/menu_bar"
             android:background="#FDDD56"
             android:fontFamily="casual"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="Logika Penalaran"
             android:textColor="#000"
@@ -81,7 +83,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:gravity="center_horizontal"
             android:text="Petunjuk Soal :
 Pilihlah satu jawaban paling tepat berdasarkan beberapa informasi singkat yang diberikan. a, b, c, atau d sebagai pilihan jawaban anda. Kerjakan dengan cepat dan teliti. Soal Akan Tertutup Otomatis Ketika Waktu Yang Diberikan Sudah Habis."
             android:layout_marginTop="10dp"
