@@ -39,7 +39,7 @@ public class NotifAdmin extends AppCompatActivity {
     ListView listViewAdm;
     AdapterNotif adapterNotif;
     public static ArrayList<DataItemUser> dataItemArrayListUser = new ArrayList<>();
-    String URLRead="http://192.168.0.117/api/kkp_project/admin/show_all.php";
+    String URLRead="https://allprojectdb.000webhostapp.com/admin/show_all.php";
     DataItemUser dataItem;
 
     @Override

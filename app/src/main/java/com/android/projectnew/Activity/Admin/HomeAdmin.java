@@ -29,7 +29,7 @@ public class HomeAdmin extends AppCompatActivity {
         final SharedPreferences sharedPreferences = getSharedPreferences("UserInfo",MODE_PRIVATE);
 
         HashMap<String, String> user = sessionManager.getUserDetail();
-        getLevel = user.get(sessionManager.LEVEL);
+        getLevel = user.get(SessionManager.LEVEL);
         logout = findViewById(R.id.logoutAA);
 
         logout.setOnClickListener(new View.OnClickListener() {

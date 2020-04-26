@@ -43,7 +43,7 @@ public class NotifActivity extends AppCompatActivity {
     ListView listView;
     AdapterNotif adapterNotif;
     public static ArrayList<DataItemUser> dataItemArrayListUser = new ArrayList<>();
-    String URLRead="http://192.168.0.117/api/kkp_project/test/show.php";
+    String URLRead="https://allprojectdb.000webhostapp.com/user/show.php";
     DataItemUser dataItem;
 
     @Override

@@ -27,7 +27,7 @@ public class NotifDetailActivity extends AppCompatActivity {
     int position;
     String getID;
     SessionManager sessionManager;
-    public static String URL_SETKETERANGAN = "http://192.168.0.117/api/kkp_project/user/getKeterangan.php";
+    public static String URL_SETKETERANGAN = "https://allprojectdb.000webhostapp.com/user/getKeterangan.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
